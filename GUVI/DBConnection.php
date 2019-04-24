@@ -1,0 +1,11 @@
+<?php 
+define('DB_SERVER', 'localhost:3306'); //database server url and port
+define('DB_USERNAME', 'root');  //database server username
+define('DB_PASSWORD', ''); //database server password
+define('DB_DATABASE', 'mydb'); //where profile is the database 
+$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE); 
+$sql="CREATE TABLE PROFILE1(USERNAME VARCHAR(20),PASSWORD VARCHAR(20),TITLE VARCHAR(20),FIRSTNAME VARCHAR(20),LASTNAME VARCHAR(20),POSITION VARCHAR(20),COMPANY VARCHAR(20),BUSINESSAREA VARCHAR(20),EMPLOYEE VARCHAR(20),STREET VARCHAR(20),ADDITIONALINFO VARCHAR(20),ZIP VARCHAR(20),PLACE VARCHAR(20),CODE VARCHAR(20),PHONE VARCHAR(20),EMAIL VARCHAR(20))";
+$db->query($sql);
+
+
+?>
