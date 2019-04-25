@@ -15,19 +15,6 @@ include_once("DBConnection.php");
 
 
 
- 
-//$stmt= $db->prepare("INSERT INTO PROFILE1 (TITLE,FIRSTNAME,LASTNAME,POSITION,COMPANY,BUSINESSAREA,EMPLOYEE,STREET,ADDITIONALINFO,ZIP,PLACE,CODE,PHONE,EMAIL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) "); //Fetching all the records with input credentials
-  //bind_param() - Binds variables to a prepared statement as parameters. "s" indicates the type of the parameter.
-
-
-
-//$stmt->bind_param("ssssssssssssss",$inTITLE,$inFIRSTNAME,$inLASTNAME,$inPOSITION,$inCOMPANY,$inBUSINESSAREA,$inEMPLOYEE,$inSTREET,$inADDITIONALINFO,$inZIP,$inPLACE,$inCODE,$inPHONE,$inEMAIL);
-
-
-
-//$stmt= $db->prepare("UPDATE PROFILE1 SET TITLE,FIRSTNAME,LASTNAME,POSITION,COMPANY,BUSINESSAREA,EMPLOYEE,STREET,ADDITIONALINFO,ZIP,PLACE,CODE,PHONE,EMAIL ");
-
-
 $stmt= $db->prepare("UPDATE PROFILE1 SET TITLE=?,FIRSTNAME=?,LASTNAME=?,POSITION=?,COMPANY=?,BUSINESSAREA=? ,EMPLOYEE=?,STREET=?,ADDITIONALINFO=?,ZIP=?,PLACE=?,CODE=?,PHONE=?,EMAIL=? WHERE USERNAME= ?");
 $stmt->bind_param("sssssssssssssss",$inTITLE,$inFIRSTNAME,$inLASTNAME,$inPOSITION,$inCOMPANY,$inBUSINESSAREA,$inEMPLOYEE,$inSTREET,$inADDITIONALINFO,$inZIP,$inPLACE,$inCODE,$inPHONE,$inEMAIL,$inUSERNAME);
 
@@ -47,9 +34,6 @@ $inCODE=$_POST["code"];
 $inPHONE=$_POST["phone"];
 $inEMAIL=$_POST["your_email"];
 $inUSERNAME = $_POST["user"]; 
-/* TITLE='$inTITLE'
-FIRSTNAME='$inFIRSTNAME'
- USERNAME= '$inuser' */
 
 $stmt->execute();
 
